@@ -1,8 +1,8 @@
 
-export default function onClick(evt, ref) {
+export default function onClick(evt, ref, closeFunction) {
     console.log(evt);
     console.log("data:", ref);
-    ref.removeEventListener('click', onClick); // теряется ссылка на ф-цию
+    ref.removeEventListener('click', closeFunction); // не теряется ссылка на ф-цию
     console.log("listener removed");
     return;
 }
